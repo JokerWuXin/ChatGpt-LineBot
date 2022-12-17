@@ -36,9 +36,11 @@ def callback():
 @line_handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     global working_status
-    working_status = True
+    
     if event.message.type != "text":
         return
+    
+    working_status = True
     
     if working_status:
         chatgpt.add_msg(f"Human:{event.message.text}?\n")
