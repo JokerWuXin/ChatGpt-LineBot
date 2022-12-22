@@ -28,7 +28,7 @@ class ChatGPT:
             )
         except openai.api_requests.ApiError:
             text="Error: API request failed"
-         return text
+        return text
         #return response['choices'][0]['text'].strip()
 
     def add_msg(self, text):
