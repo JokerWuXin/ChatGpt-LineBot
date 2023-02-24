@@ -40,6 +40,9 @@ def handle_message(event):
     if event.message.type != "text":
         return
     
+    if !event.message.text.startswith("#GPT "):
+        return
+    
     if event.message.text == "啟動":
         working_status = True
         line_bot_api.reply_message(
